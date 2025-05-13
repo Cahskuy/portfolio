@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
+import { FaNodeJs, FaPython, FaPhp, FaGitAlt, FaDatabase, FaDocker, FaRegLightbulb, FaUserFriends, FaRegClock, FaRocket } from 'react-icons/fa';
+import { SiTypescript, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiVercel, SiRailway, SiCloudflare, SiPostman, SiJira } from 'react-icons/si';
 
 const GITHUB_USERNAME = "Cahskuy";
 
@@ -42,11 +44,33 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">Skills</h2>
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
           {[
-            "REST API Development", "API Documentation (Stoplight)", "Node.js", "TypeScript", "Hono",
-            "Go", "Python", "PHP", "Flutter", "SQL (PostgreSQL, MySQL)",
-            "Git, GitHub", "Postman", "TablePlus", "JIRA",
-            "Problem-Solving", "Collaboration", "Time Management", "Fast Learning"
-          ].map(skill => <li key={skill} className="bg-gray-800 px-3 py-1 rounded-md">{skill}</li>)}
+            { skill: "REST API Development", icon: <FaNodeJs /> },
+            { skill: "API Documentation (Stoplight)", icon: <SiPostman /> },
+            { skill: "Node.js", icon: <FaNodeJs /> },
+            { skill: "TypeScript", icon: <SiTypescript /> },
+            { skill: "Hono", icon: <FaNodeJs /> },
+            { skill: "Go", icon: <SiGo /> },
+            { skill: "Python", icon: <FaPython /> },
+            { skill: "PHP", icon: <FaPhp /> },
+            { skill: "Flutter", icon: <SiFlutter /> },
+            { skill: "SQL (PostgreSQL, MySQL)", icon: <FaDatabase /> },
+            { skill: "NoSQL (MongoDB, Redis)", icon: <SiMongodb /> },
+            { skill: "Git, GitHub", icon: <FaGitAlt /> },
+            { skill: "Vercel", icon: <SiVercel /> },
+            { skill: "Railway", icon: <SiRailway /> },
+            { skill: "Cloudflare (Basic)", icon: <SiCloudflare /> },
+            { skill: "Postman", icon: <SiPostman /> },
+            { skill: "TablePlus", icon: <FaDatabase /> },
+            { skill: "JIRA", icon: <SiJira /> },
+            { skill: "Problem-Solving", icon: <FaRegLightbulb /> },
+            { skill: "Collaboration", icon: <FaUserFriends /> },
+            { skill: "Fast Learning", icon: <FaRocket /> },
+          ].map(({ skill, icon }) => (
+            <li key={skill} className="bg-gray-800 px-3 py-1 rounded-md flex items-center gap-2">
+              {icon}
+              {skill}
+            </li>
+          ))}
         </ul>
       </section>
 
