@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import { FaNodeJs, FaPython, FaPhp, FaGitAlt, FaDatabase, FaDocker, FaRegLightbulb, FaUserFriends, FaRegClock, FaRocket } from 'react-icons/fa';
-import { SiTypescript, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiVercel, SiRailway, SiCloudflare, SiPostman, SiJira } from 'react-icons/si';
+import { FaNodeJs, FaPython, FaPhp, FaGitAlt, FaDatabase, FaRegLightbulb, FaUserFriends, FaRocket } from 'react-icons/fa';
+import { SiTypescript, SiGo, SiFlutter, SiMongodb, SiVercel, SiRailway, SiCloudflare, SiPostman, SiJira } from 'react-icons/si';
 
 const GITHUB_USERNAME = "Cahskuy";
 
