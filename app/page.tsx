@@ -36,7 +36,7 @@ export default function Home() {
         />
         <h1 className="text-3xl font-bold">Bagus Nugraha</h1>
         <p className="mt-2 max-w-2xl mx-auto px-4">
-          I am an experienced and dedicated backend developer, skilled in REST API development and comprehensive documentation. Over the past three years of my professional career, Node.js has become the main environment in the development of my backend projects. I am proficient in using Git, GitHub, and JIRA for managing projects. A quick learner with the ability to grasp new concepts rapidly, whether working independently or collaboratively within a team.
+          I am an experienced and dedicated backend developer, skilled in REST API development and comprehensive documentation. Over the past three years of my professional career, Node.js has become the primary environment for developing my backend projects. I am proficient in using Git, GitHub, and JIRA for project management. A quick learner with the ability to grasp new concepts rapidly, whether working independently or collaboratively within a team.
         </p>
       </section>
 
