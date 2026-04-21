@@ -1,8 +1,5 @@
-'use client'; // Add this line at the top
-
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { GithubIcon, LinkedinIcon } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import {
     FaNodeJs,
     FaPython,
@@ -34,25 +31,30 @@ type Repo = {
     html_url: string;
 };
 
-export default function Home() {
-    const [repos, setRepos] = useState<Repo[]>([]);
+async function getRepos(): Promise<Repo[]> {
+    const res = await fetch(
+        `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated`,
+        {
+            next: { revalidate: 60 },
+        },
+    );
 
-    useEffect(() => {
-        fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated`,
-        )
-            .then((res) => res.json())
-            .then((data) => setRepos(data.slice(0, 6)));
-    }, []);
+    const data = await res.json();
+    return data.slice(0, 6);
+}
+
+export default async function Home() {
+    const repos = await getRepos();
 
     return (
         <main className="min-h-screen bg-gray-900 text-white font-sans">
             <section className="py-16 text-center">
                 <Image
-                    src={`/assets/profileimg.jpeg`}
+                    src="/assets/profileimg.jpeg"
                     alt="avatar"
                     width={128}
                     height={128}
+                    priority
                     className="rounded-full mx-auto mb-4 border-4 border-white"
                 />
                 <h1 className="text-3xl font-bold">Bagus Nugraha</h1>
@@ -156,14 +158,14 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <GithubIcon className="w-5 h-5" />
+                        <Github className="w-5 h-5" />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/bagusngrha"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <LinkedinIcon className="w-5 h-5" />
+                        <Linkedin className="w-5 h-5" />
                     </a>
                 </div>
             </section>
